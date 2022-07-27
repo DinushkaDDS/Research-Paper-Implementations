@@ -8,7 +8,7 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, utils
 
 
-class SIDD_Loader(Dataset):
+class SIDD_Dataset(Dataset):
 
     def __init__(self, img_dir, transform=None):
 
