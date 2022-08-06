@@ -78,5 +78,5 @@ class ToTensor(object):
         # torch image: C x H x W
         good_img = good_img.transpose((2, 0, 1))
         noisy_img = noisy_img.transpose((2, 0, 1))
-        return {'good_img': torch.from_numpy(good_img),
-                'noisy_img': torch.from_numpy(noisy_img)}
+        return {'good_img': torch.from_numpy(good_img).type(torch.float),
+                'noisy_img': torch.from_numpy(noisy_img).type(torch.float)}
