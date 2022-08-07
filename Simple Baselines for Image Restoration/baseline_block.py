@@ -2,7 +2,8 @@ import torch
 from torch import nn
 
 class BaselineBlock(torch.nn.Module):
-
+    '''Note the dimensions are not tested to work'''
+    
     def __init__(self, input_channels):
         super().__init__()
         n_filters = input_channels

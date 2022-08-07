@@ -8,7 +8,8 @@ class NAFNetBlock(torch.nn.Module):
         n_filters = num_filters
 
         self.conv1 = nn.Conv2d(input_channels, n_filters, kernel_size=1, padding=0, stride=1)
-        self.deconv = nn.Conv2d(n_filters, n_filters * n_filters, kernel_size=3, padding=1, groups=n_filters) # Depthwise convolution
+        self.deconv = nn.Conv2d(n_filters, n_filters * n_filters, kernel_size=3,\
+                                         padding=1, groups=n_filters) # Depthwise convolution
         
         self.conv2 = nn.Conv2d((n_filters*n_filters)//2, input_channels, kernel_size=1, stride=1)
         self.conv3 = nn.Conv2d(input_channels, n_filters, kernel_size=1, stride=1)
